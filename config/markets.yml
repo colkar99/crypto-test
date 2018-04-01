@@ -1,0 +1,46 @@
+- id: ethbtc
+  code: 3
+  name: ETH/BTC      # default name
+  base_unit: eth
+  quote_unit: btc
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: btc, fixed: 8}
+  ask: {fee: 0, currency: eth, fixed: 8}
+  sort_order: 1
+  #visible: false     # default to true
+- id: ltcbtc
+  code: 4
+  name: LTC/BTC      # default name
+  base_unit: ltc
+  quote_unit: btc
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: btc, fixed: 8}
+  ask: {fee: 0, currency: ltc, fixed: 8}
+  sort_order: 1
+- id: bchbtc
+  code: 5
+  name: BCH/BTC      # default name
+  base_unit: bch
+  quote_unit: btc
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: btc, fixed: 8}
+  ask: {fee: 0, currency: bch, fixed: 8}
+  sort_order: 1
+- id: dashbtc
+  code: 6
+  name: DASH/BTC      # default name
+  base_unit: dash
+  quote_unit: btc
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: btc, fixed: 8}
+  ask: {fee: 0, currency: dash, fixed: 8}
+  sort_order: 1
+- id: btcxrp
+  code: 7
+  name: BTC/XRP      # default name
+  base_unit: btc
+  quote_unit: xrp
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: xrp, fixed: 8}
+  ask: {fee: 0, currency: btc, fixed: 8}
+  sort_order: 1

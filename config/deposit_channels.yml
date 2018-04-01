@@ -1,0 +1,37 @@
+- id: 200
+  key: satoshi
+  currency: btc
+  sort_order: 1
+  min_confirm: 1
+  max_confirm: 3
+
+- id: 300
+  key: litecoin
+  currency: ltc
+  min_confirm: 1
+  max_confirm: 6
+
+- id: 500
+  key: ether
+  currency: eth
+  min_confirm: 1
+  max_confirm: 6
+
+- id: 800
+  key: bitcoincash
+  currency: bch
+  min_confirm: 1
+  max_confirm: 6
+  
+- id: 900
+  key: dashcoin
+  currency: dash
+  min_confirm: 1
+  max_confirm: 6
+
+- id: 600
+  key: ripple
+  currency: xrp
+  min_confirm: 1
+  max_confirm: 6
+  

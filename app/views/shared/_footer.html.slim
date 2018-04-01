@@ -1,0 +1,10 @@
+footer
+  .container
+    .row.text-center
+      p: ul.list-inline
+        li: a class='text-color' target='_blank' href='https://corrum.com' Terms of Service
+        li: a class='text-color' target='_blank' href='https://corrum.com' Fee Schedule
+        - if current_user
+          li: a class='text-color' target='_blank' href = tickets_path Support
+      p
+        | Copyright © 2017 Apollo IT

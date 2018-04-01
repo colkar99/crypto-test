@@ -1,0 +1,84 @@
+- id: 2
+  key: satoshi
+  code: btc
+  symbol: "฿"
+  coin: true
+  precision: 4
+  quick_withdraw_max: 0
+  rpc: http://andychuchu:2U8zb3Tj23dK2jzxTcQF@185.127.17.167:8332
+  blockchain: https://blockchain.info/tx/#{txid}
+  address_url: https://blockchain.info/address/#{address}
+  assets:
+    accounts:
+      -
+        address: 1AD3Ri9MmkUZ6ZHEfJy3UEUgFY2iFMkqt4
+- id: 3
+  key: ether
+  code: eth
+  symbol: "Ξ"
+  coin: true
+  precision: 4
+  quick_withdraw_max: 0
+  rpc: http://18.220.100.160
+  blockchain: https://etherscan.io/tx/#{txid}
+  address_url: https://etherscan.io/address/#{address}
+  assets:
+    accounts:
+      -
+        address: 0x86f1e1be59c2ee482ac2294c694ed0ab3732c454
+- id: 4
+  key: litecoin
+  code: ltc
+  symbol: "Ł"
+  coin: true
+  precision: 4
+  quick_withdraw_max: 0
+  rpc: http://andychuchu:2U8zb3Tj23dK2jzxTcQF@185.127.17.125:9332
+  blockchain: https://live.blockcypher.com/ltc/tx/#{txid}
+  address_url: https://live.blockcypher.com/ltc/address/#{address}
+  assets:
+    accounts:
+      -
+        address: MWUuWMjupjhmjVvxnUMWqiLBE8RtCtsoQR
+- id: 5
+  key: bitcoincash
+  code: bch
+  symbol: "₿"
+  coin: true
+  precision: 4
+  quick_withdraw_max: 0
+  rpc: http://andychuchu:2U8zb3Tj23dK2jzxTcQF@52.14.126.98:8332
+  blockchain: https://bccblock.info/tx//#{txid}
+  address_url: https://bccblock.info/address/#{address}
+  assets:
+    accounts:
+      -
+        address: DB49PhQzijWhx78wPSjc3sZrC9GCLp2xEX
+- id: 6
+  key: dashcoin
+  code: dash
+  symbol: "Ð"
+  coin: true
+  precision: 4
+  quick_withdraw_max: 0
+  rpc: http://andychuchu:2U8zb3Tj23dK2jzxTcQF@18.220.75.181:8332
+  blockchain: https://explorer.dash.org/tx/#{txid}
+  address_url: https://explorer.dash.org/address/#{address}
+  assets:
+    accounts:
+      -
+        address: Xh695oLMvBZ1db4zCmPVJj71dsVDDkRVKd
+- id: 7
+  key: ripple
+  code: xrp
+  symbol: "USD₮"
+  coin: true
+  precision: 4
+  quick_withdraw_max: 0
+  rpc: http://andychuchu:2U8zb3Tj23dK2jzxTcQF@13.58.194.18:8332
+  blockchain: https://xrpcharts.ripple.com/#/transactions/#{txid}
+  address_url: https://bithomp.com/explorer/#{address}
+  assets:
+    accounts:
+      -
+        address: 3GDRbfVRdVxMDePzDexPpAa83gpZrax2wg
