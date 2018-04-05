@@ -3,7 +3,7 @@ development: &defaults
   encoding: utf8
   database: exchange_development
   username: root
-  password: 2U8zb3Tj23dK2jzxTcQF
+  password: qwe123asd456zxc789
   pool: 10
   reconnect: true
 
