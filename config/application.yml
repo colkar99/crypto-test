@@ -21,10 +21,10 @@ defaults: &defaults
   SMTP_PASSWORD: FYQm1sTmlSRc
   SMTP_AUTHENTICATION: plain # could be plain, login or cram_md5
 
-  SUPPORT_MAIL: support@corrum.com
-  SYSTEM_MAIL_FROM: system@corrum.com
-  SYSTEM_MAIL_TO: group@corrum.com
-  OPERATE_MAIL_TO: support@corrum.com
+  SUPPORT_MAIL: support@corumx.com
+  SYSTEM_MAIL_FROM: system@corumx.com
+  SYSTEM_MAIL_TO: group@corumx.com
+  OPERATE_MAIL_TO: support@corumx.com
 
   # WebSocket Streaming API settings
   # --------------------------------------------------------------
