@@ -30,7 +30,17 @@
 #= require_tree ./component_data
 #= require_tree ./component_ui
 #= require_tree ./templates
-
+out = false
+window.onmouseover = (ev) ->
+  out = false
+window.onmouseout = (ev) ->
+  out = true
+window.onbeforeunload = (ev) ->
+  if out
+    $.ajax({
+      url:"/clearSession"
+      type:"post"
+    })
 $ ->
   BigNumber.config(ERRORS: false)
 

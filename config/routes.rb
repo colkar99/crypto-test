@@ -26,6 +26,7 @@ Exchange::Application.routes.draw do
   get '/signout' => 'sessions#destroy', :as => :signout
   get '/auth/failure' => 'sessions#failure', :as => :failure
   match '/auth/:provider/callback' => 'sessions#create', via: [:get, :post]
+  match '/clearSession' => 'sessions#destroy', via: [:post]
 
   resource :member, :only => [:edit, :update]
   resource :identity, :only => [:edit, :update]
