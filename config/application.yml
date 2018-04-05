@@ -6,7 +6,7 @@ defaults: &defaults
   URL_HOST: test.corumx.com
   URL_SCHEMA: http
   SESSION_EXPIRE: 60
-  ADMIN: 'admin@corrum.com'
+  ADMIN: 'admin@corumx.com'
   TIMEZONE: 'Central Time (US & Canada)'
 
   REDIS_URL: redis://127.0.0.1:6379
