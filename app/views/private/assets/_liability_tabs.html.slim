@@ -3,9 +3,9 @@
     li.active: a.btc-proof href="#btc-proof" data-toggle="tab" == t('.verify-btc')
     li:        a.eth-proof href="#eth-proof" data-toggle="tab" == t('.verify-eth')
     li:        a.ltc-proof href="#ltc-proof" data-toggle="tab" == t('.verify-ltc')
-    /li:        a.dash-proof href="#dash-proof" data-toggle="tab" == t('.verify-dash')
+    li:        a.dash-proof href="#dash-proof" data-toggle="tab" == t('.verify-dash')
     li:        a.bch-proof href="#bch-proof" data-toggle="tab" == t('.verify-bch')
-    /li:        a.xrp-proof href="#xrp-proof" data-toggle="tab" == t('.verify-xrp')
+    li:        a.xrp-proof href="#xrp-proof" data-toggle="tab" == t('.verify-xrp')
 
   .tab-content
     #btc-proof.tab-pane.active: .trade-wrapper
@@ -32,13 +32,13 @@
           = @ltc_proof.sum
       = render 'liability_data', account: @ltc_account, proof: @ltc_proof
 
-    /#dash-proof.tab-pane: .trade-wrapper
-    /  .assets
-    /    span.title = t('.dash-assets-total')
-    /    span.currency
-    /      == t("currency.icon.dash")
-    /      = @dash_proof.sum
-    /  = render 'liability_data', account: @dash_account, proof: @dash_proof
+    #dash-proof.tab-pane: .trade-wrapper
+      .assets
+        span.title = t('.dash-assets-total')
+        span.currency
+          == t("currency.icon.dash")
+          = @dash_proof.sum
+      = render 'liability_data', account: @dash_account, proof: @dash_proof
 
     #bch-proof.tab-pane: .trade-wrapper
       .assets
@@ -48,10 +48,10 @@
           = @bch_proof.sum
       = render 'liability_data', account: @bch_account, proof: @bch_proof
 
-    /#xrp-proof.tab-pane:       .trade-wrapper
-    /  .assets
-    /    span.title = t('.xrp-assets-total')
-    /    span.currency
-    /      == t("currency.icon.xrp")
-    /      = @xrp_proof.sum
-    /  = render 'liability_data', account: @xrp_account, proof: @xrp_proof
+    #xrp-proof.tab-pane:       .trade-wrapper
+      .assets
+        span.title = t('.xrp-assets-total')
+        span.currency
+          == t("currency.icon.xrp")
+          = @xrp_proof.sum
+      = render 'liability_data', account: @xrp_account, proof: @xrp_proof

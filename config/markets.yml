@@ -26,21 +26,21 @@
   bid: {fee: 0, currency: btc, fixed: 8}
   ask: {fee: 0, currency: bch, fixed: 8}
   sort_order: 1
-#- id: dashbtc
-#  code: 6
-#  name: DASH/BTC      # default name
-#  base_unit: dash
-#  quote_unit: btc
-#  #price_group_fixed: 1 # aggregate price levels in orderbook
-#  bid: {fee: 0, currency: btc, fixed: 8}
-#  ask: {fee: 0, currency: dash, fixed: 8}
-#  sort_order: 1
-#- id: btcxrp
-#  code: 7
-#  name: BTC/XRP      # default name
-#  base_unit: btc
-#  quote_unit: xrp
-#  #price_group_fixed: 1 # aggregate price levels in orderbook
-#  bid: {fee: 0, currency: xrp, fixed: 8}
-#  ask: {fee: 0, currency: btc, fixed: 8}
-#  sort_order: 1
+- id: dashbtc
+  code: 6
+  name: DASH/BTC      # default name
+  base_unit: dash
+  quote_unit: btc
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: btc, fixed: 8}
+  ask: {fee: 0, currency: dash, fixed: 8}
+  sort_order: 1
+- id: btcxrp
+  code: 7
+  name: BTC/XRP      # default name
+  base_unit: btc
+  quote_unit: xrp
+  #price_group_fixed: 1 # aggregate price levels in orderbook
+  bid: {fee: 0, currency: xrp, fixed: 8}
+  ask: {fee: 0, currency: btc, fixed: 8}
+  sort_order: 1
