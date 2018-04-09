@@ -1,12 +1,12 @@
 module Admin
   module Withdraws
-    class BitcoincashsController < ::Admin::Withdraws::BaseController
+    class BitcoincashesController < ::Admin::Withdraws::BaseController
       load_and_authorize_resource :class => '::Withdraws::Bitcoincash'
 
       def index
         start_at = DateTime.now.ago(60 * 60 * 24)
-        @one_bitcoincashs = @bitcoincashs.with_aasm_state(:accepted).order("id DESC")
-        @all_bitcoincashs = @bitcoincashs.without_aasm_state(:accepted).where('created_at > ?', start_at).order("id DESC")
+        @one_bitcoincashes = @bitcoincashes.with_aasm_state(:accepted).order("id DESC")
+        @all_bitcoincashes = @bitcoincashes.without_aasm_state(:accepted).where('created_at > ?', start_at).order("id DESC")
       end
 
       def show

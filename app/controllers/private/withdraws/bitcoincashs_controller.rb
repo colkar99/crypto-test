@@ -1,5 +1,5 @@
 module Private::Withdraws
-  class BitcoincashsController < ::Private::Withdraws::BaseController
+  class BitcoincashesController < ::Private::Withdraws::BaseController
     include ::Withdraws::Withdrawable
   end
 end

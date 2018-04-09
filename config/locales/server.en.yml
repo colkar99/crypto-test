@@ -545,7 +545,7 @@ en:
       ethers:
         gen_address:
           require_transaction: it can't generate new address if it hasn't been used.
-      bitcoincashs:
+      bitcoincashes:
         gen_address:
           require_transaction: it can't generate new address if it hasn't been used.
       litecoins:
@@ -1432,7 +1432,7 @@ en:
           succeed_confirm: Process withdrawal?
           reject_confirm: Reject withdrawal?
           withdraw: Withdrawals
-      bitcoincashs:
+      bitcoincashes:
         index:
           one: Pending withdrawals
           all: Last 24 hours
