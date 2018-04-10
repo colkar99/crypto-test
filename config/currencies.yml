@@ -5,7 +5,7 @@
   coin: true
   precision: 4
   quick_withdraw_max: 0
-  rpc: http://andychuchu:2U8zb3Tj23dK2jzxTcQF@185.127.17.167:8332
+  rpc: http://ashrofail:vMCR34g5sk59Pw1k@172.30.3.8:18332
   blockchain: https://blockchain.info/tx/#{txid}
   address_url: https://blockchain.info/address/#{address}
   assets:
@@ -19,7 +19,7 @@
   coin: true
   precision: 4
   quick_withdraw_max: 0
-  rpc: http://18.220.100.160
+  rpc: http://172.30.3.53
   blockchain: https://etherscan.io/tx/#{txid}
   address_url: https://etherscan.io/address/#{address}
   assets:
@@ -33,7 +33,7 @@
   coin: true
   precision: 4
   quick_withdraw_max: 0
-  rpc: http://andychuchu:2U8zb3Tj23dK2jzxTcQF@185.127.17.125:9332
+  rpc: http://ashrofail:lB1m713ojT07RT2G@172.30.3.244:19332
   blockchain: https://live.blockcypher.com/ltc/tx/#{txid}
   address_url: https://live.blockcypher.com/ltc/address/#{address}
   assets:
@@ -47,7 +47,7 @@
   coin: true
   precision: 4
   quick_withdraw_max: 0
-  rpc: http://andychuchu:2U8zb3Tj23dK2jzxTcQF@52.14.126.98:8332
+  rpc: http://ashrofail:42cbhp1SP991u99w@172.30.3.236:18332
   blockchain: https://bccblock.info/tx//#{txid}
   address_url: https://bccblock.info/address/#{address}
   assets:
