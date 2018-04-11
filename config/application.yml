@@ -45,9 +45,9 @@ defaults: &defaults
   # PUSHER_KEY: 50d404c35db92d736a57
   # PUSHER_SECRET: 75d6e6685209cc60cc4d
 
-  PUSHER_APP: 446574
-  PUSHER_KEY: cc618101daeb5c424434
-  PUSHER_SECRET: 21fc70fd6778e9768e98
+  PUSHER_APP: 497838
+  PUSHER_KEY: db5e1b8c350a288f9af5
+  PUSHER_SECRET: 6442eff117febadca83e
   PUSHER_HOST: api-mtl.pusher.com
   # Careful in Host - pusher zone binding
   PUSHER_PORT: 80
