@@ -76,14 +76,14 @@ group :development, :test do
   gem 'mina-slack', github: 'Apollo-IT/mina-slack'
   gem 'meta_request'
   gem 'better_errors'
-  gem 'binding_of_caller'
+  # gem 'binding_of_caller'
   gem 'pry-rails'
   gem 'quiet_assets'
   gem 'mails_viewer'
   gem 'timecop'
   gem 'dotenv-rails'
   gem 'rspec-rails'
-  gem 'byebug'
+  # gem 'byebug'
 end
 
 group :test do
