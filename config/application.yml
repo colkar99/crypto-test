@@ -3,8 +3,8 @@ defaults: &defaults
   # sites hosts
   # session expire seconds
   # admin role account
-  URL_HOST: test.corumx.com
-  URL_SCHEMA: http
+  URL_HOST: 192.168.1.156:3000
+  URL_SCHEMA: https
   SESSION_EXPIRE: 60
   ADMIN: 'admin@corumx.com'
   TIMEZONE: 'Central Time (US & Canada)'
@@ -14,11 +14,11 @@ defaults: &defaults
   # below settings only in production env
   # system notify mail settings
   # --------------------------------------------------------------
-  SMTP_PORT: 2525
+  SMTP_PORT: 587
   SMTP_DOMAIN: mail.smtp2go.com
   SMTP_ADDRESS: mail.smtp2go.com
   SMTP_USERNAME: corrumx
-  SMTP_PASSWORD: FYQm1sTmlSRc
+  SMTP_PASSWORD: JTnbRxdkiqbe
   SMTP_AUTHENTICATION: plain # could be plain, login or cram_md5
 
   SUPPORT_MAIL: support@corumx.com
@@ -45,10 +45,10 @@ defaults: &defaults
   # PUSHER_KEY: 50d404c35db92d736a57
   # PUSHER_SECRET: 75d6e6685209cc60cc4d
 
-  PUSHER_APP: 497838
-  PUSHER_KEY: db5e1b8c350a288f9af5
-  PUSHER_SECRET: 6442eff117febadca83e
-  PUSHER_HOST: api-eu.pusher.com
+  PUSHER_APP: 446574
+  PUSHER_KEY: cc618101daeb5c424434
+  PUSHER_SECRET: 21fc70fd6778e9768e98
+  PUSHER_HOST: api-mtl.pusher.com
   # Careful in Host - pusher zone binding
   PUSHER_PORT: 80
   PUSHER_WS_PORT: 80

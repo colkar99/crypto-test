@@ -121,7 +121,7 @@ class ApplicationController < ActionController::Base
 
     gon.pusher = {
       key:       ENV['PUSHER_KEY'],
-      wsHost:    ENV['PUSHER_HOST']      || 'ws.pusherapp.com',
+      wsHost:    'ws-mtl.pusher.com',
       wsPort:    ENV['PUSHER_WS_PORT']   || '80',
       wssPort:   ENV['PUSHER_WSS_PORT']  || '443',
       encrypted: ENV['PUSHER_ENCRYPTED'] == 'true'
@@ -225,7 +225,6 @@ class ApplicationController < ActionController::Base
     if redis = Rails.cache.instance_variable_get(:@data)
       redis.keys("exchange:sessions:#{member_id}:*").each {|k| Rails.cache.delete k.split(':').last }
     end
-
     Rails.cache.delete_matched "exchange:sessions:#{member_id}:*"
   end
 
