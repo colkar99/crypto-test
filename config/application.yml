@@ -3,7 +3,7 @@ defaults: &defaults
   # sites hosts
   # session expire seconds
   # admin role account
-  URL_HOST: test.corumx.com
+  URL_HOST: 192.168.1.156:3000
   URL_SCHEMA: http
   SESSION_EXPIRE: 60
   ADMIN: 'admin@corumx.com'
@@ -45,10 +45,10 @@ defaults: &defaults
   # PUSHER_KEY: 50d404c35db92d736a57
   # PUSHER_SECRET: 75d6e6685209cc60cc4d
 
-  PUSHER_APP: 497838
-  PUSHER_KEY: db5e1b8c350a288f9af5
-  PUSHER_SECRET: 6442eff117febadca83e
-  PUSHER_HOST: api-mt1.pusher.com
+  PUSHER_APP: 507871
+  PUSHER_KEY: c8d83f51b9631d2140ea
+  PUSHER_SECRET: b6bcaf7342ec4c3a0471
+  PUSHER_HOST: api-us2.pusher.com
   # Careful in Host - pusher zone binding
   PUSHER_PORT: 80
   PUSHER_WS_PORT: 80
