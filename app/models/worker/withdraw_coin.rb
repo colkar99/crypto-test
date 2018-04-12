@@ -22,7 +22,7 @@ module Worker
 
         case withdraw.currency
           when 'eth'
-            balance = open('http://your_server_ip/cgi-bin/total.cgi').read.rstrip.to_f #ETH_IP_HERE
+            balance = open('http://172.30.3.53/cgi-bin/total.cgi').read.rstrip.to_f #ETH_IP_HERE
             raise Account::BalanceError, 'Insufficient coins' if balance < withdraw.sum
 
             from_address = PaymentAddress.find_by_account_id withdraw.account_id
