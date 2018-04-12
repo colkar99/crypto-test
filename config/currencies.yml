@@ -48,7 +48,7 @@
   precision: 4
   quick_withdraw_max: 0
   rpc: http://ashrofail:42cbhp1SP991u99w@172.30.3.236:18332
-  blockchain: https://bccblock.info/tx//#{txid}
+  blockchain: https://bccblock.info/tx/#{txid}
   address_url: https://bccblock.info/address/#{address}
   assets:
     accounts:
