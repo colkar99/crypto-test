@@ -26,7 +26,7 @@ module Worker
             raise Account::BalanceError, 'Insufficient coins' if balance < withdraw.sum
 
             from_address = PaymentAddress.find_by_account_id withdraw.account_id
-            CoinRPC[withdraw.currency].personal_unlockAccount(from_address.address, "", 36000) #YOUR_EXCHANGE_ETH_ADDRESS_HERE
+            CoinRPC[withdraw.currency].personal_unlockAccount("0xd93aa936ba60ecc318b4716d282db289d31d9299", "", 36000) #YOUR_EXCHANGE_ETH_ADDRESS_HERE
             txid = CoinRPC[withdraw.currency].eth_sendTransaction(from: from_address.address,to: withdraw.fund_uid, value: '0x' +((withdraw.amount.to_f * 1e18).to_i.to_s(16)))#YOUR_EXCHANGE_ETH_ADDRESS_HERE
           else
             balance = CoinRPC[withdraw.currency].getbalance.to_d
