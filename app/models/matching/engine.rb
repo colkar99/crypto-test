@@ -12,6 +12,77 @@ module Matching
       # dryrun: do the match, do not publish the trades
       # run:    do the match, publish the trades (default)
       shift_gears(options[:mode] || :run)
+
+      Rails.logger.info "Thread initialized!!!"
+
+      if @fake_order_thread
+        Rails.logger.info "Thread exit!!!"
+        @fake_order_thread.exit
+      end
+      @fake_order_thread = Thread.new do
+        loop do
+          sleep 5
+          submit_fake_order
+        end
+      end
+    end
+
+    def submit_fake_order
+      uri = URI.parse("https://bittrex.com")
+      uri.path = "/api/v1.1/public/getorderbook"
+      uri.query = "market=#{@market.query_name}&type=buy"
+      https = Net::HTTP.new(uri.host, uri.port)
+      https.use_ssl = true
+      response = https.get uri.request_uri
+      resp = JSON.parse( response.body )
+      if resp['success']
+        resp['result'].reverse.each do |f_order|
+          @order = OrderBid.find_by_price f_order["Rate"]
+          unless @order
+            m_order = {:bid => @market.bid['currency'],
+                       :ask => @market.ask['currency'],
+                       :state => Order::WAIT,
+                       :currency => @market.id,
+                       :volume => f_order["Quantity"],
+                       :origin_volume => f_order["Quantity"],
+                       :source => 'Web',
+                       :price => f_order["Rate"],
+                       :ord_type => 'limit'
+            }
+            @order = OrderBid.new(m_order)
+            # Rails.logger.info "Submitting Order: #{@order.as_json}"
+            Ordering.new(@order).submit
+          end
+        end
+      end
+
+      uri = URI.parse("https://bittrex.com")
+      uri.path = "/api/v1.1/public/getorderbook"
+      uri.query = "market=#{@market.query_name}&type=sell"
+      https = Net::HTTP.new(uri.host, uri.port)
+      https.use_ssl = true
+      response = https.get uri.request_uri
+      resp = JSON.parse( response.body )
+      if resp['success']
+        resp['result'].reverse.each do |f_order|
+          @order = OrderAsk.find_by_price f_order["Rate"]
+          unless @order
+            m_order = {:bid => @market.bid['currency'],
+                       :ask => @market.ask['currency'],
+                       :state => Order::WAIT,
+                       :currency => @market.id,
+                       :volume => f_order["Quantity"],
+                       :origin_volume => f_order["Quantity"],
+                       :source => 'Web',
+                       :price => f_order["Rate"],
+                       :ord_type => 'limit'
+            }
+            @order = OrderAsk.new(m_order)
+            # Rails.logger.info "Submitting Order: #{@order.as_json}"
+            Ordering.new(@order).submit
+          end
+        end
+      end
     end
 
     def submit(order)
