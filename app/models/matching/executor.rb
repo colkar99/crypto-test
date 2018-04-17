@@ -62,7 +62,7 @@ module Matching
       end
 
       # TODO: temporary fix, can be removed after pusher -> polling refactoring
-      if @trade.ask_member_id == @trade.bid_member_id
+      if @trade.ask_member_id == @trade.bid_member_id && @trade.bid_member
         @ask.hold_account.reload.trigger
         @bid.hold_account.reload.trigger
       end

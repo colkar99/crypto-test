@@ -9,11 +9,11 @@ class OrderBid < Order
   end
 
   def hold_account
-    member.get_account(bid)
+    member.get_account(bid) if member
   end
 
   def expect_account
-    member.get_account(ask)
+    member.get_account(ask) if member
   end
 
   def avg_price
