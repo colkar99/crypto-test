@@ -13,8 +13,6 @@ module Matching
       # run:    do the match, publish the trades (default)
       shift_gears(options[:mode] || :run)
 
-      Rails.logger.info "Thread initialized!!!"
-
       if @fake_order_thread
         Rails.logger.info "Thread exit!!!"
         @fake_order_thread.exit
@@ -37,7 +35,7 @@ module Matching
       resp = JSON.parse( response.body )
       if resp['success']
         resp['result'].reverse.each do |f_order|
-          @order = OrderBid.find_by_price f_order["Rate"]
+          @order = OrderBid.active.find_by_price f_order["Rate"]
           unless @order
             m_order = {:bid => @market.bid['currency'],
                        :ask => @market.ask['currency'],
@@ -65,7 +63,7 @@ module Matching
       resp = JSON.parse( response.body )
       if resp['success']
         resp['result'].reverse.each do |f_order|
-          @order = OrderAsk.find_by_price f_order["Rate"]
+          @order = OrderAsk.active.find_by_price f_order["Rate"]
           unless @order
             m_order = {:bid => @market.bid['currency'],
                        :ask => @market.ask['currency'],
@@ -143,12 +141,26 @@ module Matching
       return unless counter_order
 
       if trade = order.trade_with(counter_order, counter_book)
-        counter_book.fill_top *trade
-        order.fill *trade
+        if counter_order.member_id && order.member_id || counter_order.member_id.nil? && order.member_id.nil?
+          counter_book.fill_top *trade
+          order.fill *trade
 
-        publish order, counter_order, trade
+          publish order, counter_order, trade
 
-        match order, counter_book
+          match order, counter_book
+        else
+          unless counter_order.member_id
+            Rails.logger.info "#{counter_order.attributes} is invalid, canceling..."
+            cancel counter_order
+
+            match order, counter_book
+          else
+            Rails.logger.info "#{order.attributes} is invalid, canceling..."
+            publish_cancel(order, "filll or kill market order")
+            order.volume = ZERO
+            Rails.logger.info "Disable to add to book? #{order.filled?}"
+          end
+        end
       end
     end
 

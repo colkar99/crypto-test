@@ -2,7 +2,7 @@ require_relative 'constants'
 
 module Matching
   class MarketOrder
-    attr :id, :timestamp, :type, :locked, :market
+    attr :id, :timestamp, :type, :locked, :market, :member_id
     attr_accessor :volume
 
     def initialize(attrs)
@@ -11,6 +11,7 @@ module Matching
       @type       = attrs[:type].to_sym
       @locked     = attrs[:locked].to_d
       @volume     = attrs[:volume].to_d
+      @member_id  = attrs[:member_id]
       @market     = Market.find attrs[:market]
 
       raise ::Matching::InvalidOrderError.new(attrs) unless valid?(attrs)
@@ -64,6 +65,7 @@ module Matching
         locked: @locked,
         volume: @volume,
         market: @market.id,
+        member_id: @member_id,
         ord_type: 'market' }
     end
 
