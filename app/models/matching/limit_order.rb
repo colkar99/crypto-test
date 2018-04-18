@@ -2,7 +2,7 @@ require_relative 'constants'
 
 module Matching
   class LimitOrder
-    attr :id, :timestamp, :type, :price, :market
+    attr :id, :timestamp, :type, :price, :market, :member_id
     attr_accessor :volume
 
     def initialize(attrs)
@@ -11,6 +11,7 @@ module Matching
       @type       = attrs[:type].to_sym
       @volume     = attrs[:volume].to_d
       @price      = attrs[:price].to_d
+      @member_id  = attrs[:member_id]
       @market     = Market.find attrs[:market]
 
       raise InvalidOrderError.new(attrs) unless valid?(attrs)
@@ -64,6 +65,7 @@ module Matching
         volume: @volume,
         price: @price,
         market: @market.id,
+        member_id: @member_id,
         ord_type: 'limit' }
     end
 

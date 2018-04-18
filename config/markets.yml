@@ -39,7 +39,7 @@
   bid: {fee: 0, currency: btc, fixed: 8}
   ask: {fee: 0, currency: dash, fixed: 8}
   sort_order: 1
-- id: btcxrp
+- id: xrpbtc
   code: 7
   name: XRP/BTC      # default name
   base_unit: xrp
