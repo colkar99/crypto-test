@@ -81,7 +81,7 @@ class Global
   end
 
   def trigger_orderbook
-    data = {asks: asks.first(30), bids: bids.first(30)}
+    data = {asks: asks, bids: bids}
     Pusher.trigger_async(channel, "update", data)
   end
 
