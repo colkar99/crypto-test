@@ -73,6 +73,8 @@ window.GlobalData = flight.component ->
     @trigger 'market::tickers', {tickers: tickers, raw: data}
     @.last_tickers = data
 
+  ps_update_working = false
+
   @after 'initialize', ->
     @on document, 'market::ticker', @refreshDocumentTitle
 
@@ -83,6 +85,7 @@ window.GlobalData = flight.component ->
       @refreshTicker(data)
 
     market_channel.bind 'update', (data) =>
+      ps_update_working = true
       gon.asks = data.asks
       gon.bids = data.bids
       @trigger 'market::order_book::update', asks: data.asks, bids: data.bids
@@ -90,6 +93,20 @@ window.GlobalData = flight.component ->
 
     market_channel.bind 'trades', (data) =>
       @trigger 'market::trades', {trades: data.trades}
+
+    self = this
+    fn_orders = () ->
+      if ps_update_working
+        ps_update_working = false
+      else
+        $.getJSON "/api/v2/cache_order_book?market=#{gon.market.id}", (data) =>
+          gon.asks = data.asks
+          gon.bids = data.bids
+          self.trigger 'market::order_book::update', asks: data.asks, bids: data.bids
+          self.refreshDepth asks: data.asks, bids: data.bids
+    setInterval(() ->
+      fn_orders()
+    , 3500)
 
     # Initializing at bootstrap
     if gon.ticker

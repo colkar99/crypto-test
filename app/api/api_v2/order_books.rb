@@ -29,5 +29,15 @@ module APIv2
       {timestamp: Time.now.to_i, asks: asks, bids: bids}
     end
 
+    desc "Get the all cached order book of specified market."
+    params do
+      use :market
+    end
+    get "/cache_order_book" do
+      global = Global[params[:market]]
+      {asks: global.asks, bids: global.bids}
+    end
+
+
   end
 end
