@@ -1,0 +1,16 @@
+/home/deploy/.rbenv/versions/2.2.1/bin/ruby -r ./siteconf20180404-26414-3jndds.rb extconf.rb
+checking for ruby/util.h... yes
+creating Makefile
+
+make "DESTDIR=" clean
+
+make "DESTDIR="
+compiling crypt_gensalt.c
+compiling crypt_blowfish.c
+compiling bcrypt_ext.c
+compiling wrapper.c
+compiling crypt.c
+linking shared-object bcrypt_ext.so
+
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 bcrypt_ext.so ./.gem.20180404-26414-p4pxbm
